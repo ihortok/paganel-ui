@@ -14,4 +14,28 @@
   .card-footer {
     @apply mt-4 pt-4 border-t border-neutral-200;
   }
+
+  /* Image bleeding to the card's top/left/right edges (cancels .card's own
+     p-4); mb-4 restores spacing before the next element since padding alone
+     doesn't create a gap between children. */
+  .card-media {
+    @apply -mx-4 -mt-4 mb-4 overflow-hidden rounded-t-ds-lg;
+  }
+
+  .card-media img {
+    @apply block h-48 w-full object-cover;
+  }
+
+  /* Layout modifier — combine with .card in markup: class="card card-horizontal" */
+  .card-horizontal {
+    @apply flex gap-4;
+  }
+
+  .card-horizontal-media {
+    @apply h-24 w-24 shrink-0 overflow-hidden rounded-ds-md;
+  }
+
+  .card-horizontal-media img {
+    @apply block h-full w-full object-cover;
+  }
 }

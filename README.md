@@ -69,10 +69,15 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | Class | Notes |
 |---|---|
 | `.card`, `.card-header`, `.card-body`, `.card-footer` | |
+| `.card-media` | Wraps an `<img>`; bleeds it to the card's edges. Combine with `.card`. |
+| `.card-horizontal`, `.card-horizontal-media` | Image-on-the-side layout. Combine `.card-horizontal` with `.card`. |
 | `.btn` + `.btn-{primary,secondary,danger}` + `.btn-{sm,md,lg}` | Compose in markup, e.g. `class="btn btn-primary btn-md"` |
 | `.badge` + `.badge-{brand,success,warning,danger}` | |
 | `.alert` + `.alert-{info,success,warning,danger}` | |
 | `.dropdown` / `.dropdown-menu` / `.dropdown-item` | See below for the JS wiring |
+| `.header`, `.header-brand`, `.header-nav`, `.header-actions` | Top app-bar layout |
+| `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`) | Vertical nav layout |
+| `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
 
 ### Dropdown
 

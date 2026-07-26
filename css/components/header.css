@@ -1,0 +1,17 @@
+@layer components {
+  .header {
+    @apply flex items-center justify-between gap-4 border-b border-neutral-200 bg-white px-6 py-4;
+  }
+
+  .header-brand {
+    @apply text-lg font-semibold text-neutral-900;
+  }
+
+  .header-nav {
+    @apply flex items-center gap-4 text-sm text-neutral-700;
+  }
+
+  .header-actions {
+    @apply flex items-center gap-3;
+  }
+}
