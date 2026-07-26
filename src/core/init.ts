@@ -1,4 +1,5 @@
 import { initDropdown } from "../behaviors/dropdown";
+import { initDrawer } from "../behaviors/drawer";
 
 const INIT_FLAG = "__paganelUiInitialized";
 
@@ -13,4 +14,5 @@ export function initPaganelUI(): void {
   flagged[INIT_FLAG] = true;
 
   initDropdown();
+  initDrawer();
 }

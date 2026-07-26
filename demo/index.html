@@ -6,17 +6,33 @@
     <title>Paganel UI — Demo</title>
   </head>
   <body class="min-h-screen bg-neutral-50">
-    <aside class="sidebar">
-      <div class="sidebar-section-title">Menu</div>
-      <a class="sidebar-link sidebar-link-active" href="#">Dashboard</a>
-      <a class="sidebar-link" href="#">Components</a>
-      <a class="sidebar-link" href="#">Settings</a>
-      <div class="sidebar-section-title">Account</div>
-      <a class="sidebar-link" href="#">Profile</a>
-      <a class="sidebar-link" href="#">Sign out</a>
-    </aside>
+    <div id="sidebar-drawer" class="sidebar-drawer" data-ds-panel="drawer">
+      <div class="sidebar-backdrop" data-ds-dismiss="drawer"></div>
+      <aside class="sidebar">
+        <div class="sidebar-section-title">Menu</div>
+        <a class="sidebar-link sidebar-link-active" href="#" data-ds-dismiss="drawer">Dashboard</a>
+        <a class="sidebar-link" href="#" data-ds-dismiss="drawer">Components</a>
+        <a class="sidebar-link" href="#" data-ds-dismiss="drawer">Settings</a>
+        <div class="sidebar-section-title">Account</div>
+        <a class="sidebar-link" href="#" data-ds-dismiss="drawer">Profile</a>
+        <div class="sidebar-footer">
+          <p class="mb-2 truncate text-xs text-neutral-400">jane@example.com</p>
+          <a class="sidebar-link" href="#" data-ds-dismiss="drawer">Sign out</a>
+        </div>
+      </aside>
+    </div>
 
     <header class="header">
+      <button
+        type="button"
+        class="btn btn-secondary btn-sm lg:hidden"
+        data-ds-toggle="drawer"
+        aria-controls="sidebar-drawer"
+        aria-expanded="false"
+        aria-label="Toggle sidebar"
+      >
+        ☰
+      </button>
       <span class="header-brand">Paganel UI</span>
       <nav class="header-nav">
         <a href="#">Docs</a>
@@ -44,7 +60,7 @@
       </div>
     </header>
 
-    <div class="ml-60 pt-16">
+    <div class="pt-16 lg:ml-60">
       <main class="mx-auto max-w-3xl space-y-10 p-8">
         <h1 class="text-2xl font-bold text-neutral-900">Paganel UI Demo</h1>
 
