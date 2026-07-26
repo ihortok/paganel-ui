@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi, type MockInstance } from "vitest";
 import { initPaganelUI } from "../src/core/init";
 
 function dropdownMarkup(idSuffix: string): string {
@@ -10,7 +10,7 @@ function dropdownMarkup(idSuffix: string): string {
   `;
 }
 
-function listenerCount(spy: ReturnType<typeof vi.spyOn>, type: string): number {
+function listenerCount(spy: MockInstance<typeof document.addEventListener>, type: string): number {
   return spy.mock.calls.filter((call) => call[0] === type).length;
 }
 
