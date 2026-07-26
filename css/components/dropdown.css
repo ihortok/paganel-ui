@@ -1,0 +1,19 @@
+@layer components {
+  .dropdown {
+    @apply relative inline-block;
+  }
+
+  /*
+   * No display utility here (no `flex`/`block`) — visibility is controlled
+   * purely via the native `hidden` attribute toggled by the JS behavior, so
+   * it never fights a Tailwind-authored display value at equal specificity.
+   */
+  .dropdown-menu {
+    @apply absolute z-10 mt-2 min-w-40 rounded-ds-md bg-white p-1 shadow-ds-md;
+  }
+
+  .dropdown-item {
+    @apply block w-full rounded-ds-sm px-3 py-2 text-left text-sm
+           text-neutral-700 hover:bg-neutral-50;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "paganel-ui-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "paganel-ui": "file:.."
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "vite": "^6.0.0"
+  }
+}

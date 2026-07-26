@@ -1,0 +1,21 @@
+@layer components {
+  .badge {
+    @apply inline-flex items-center rounded-ds-sm px-2 py-0.5 text-xs font-medium;
+  }
+
+  .badge-brand {
+    @apply bg-brand-50 text-brand-700;
+  }
+
+  .badge-success {
+    @apply bg-success-500/10 text-success-500;
+  }
+
+  .badge-warning {
+    @apply bg-warning-500/10 text-warning-500;
+  }
+
+  .badge-danger {
+    @apply bg-danger-500/10 text-danger-500;
+  }
+}

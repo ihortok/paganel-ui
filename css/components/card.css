@@ -1,0 +1,17 @@
+@layer components {
+  .card {
+    @apply bg-white shadow-ds-md rounded-ds-lg p-4;
+  }
+
+  .card-header {
+    @apply mb-2 text-lg font-semibold text-neutral-900;
+  }
+
+  .card-body {
+    @apply text-neutral-700;
+  }
+
+  .card-footer {
+    @apply mt-4 pt-4 border-t border-neutral-200;
+  }
+}

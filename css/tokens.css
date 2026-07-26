@@ -1,0 +1,24 @@
+@theme {
+  --color-brand-50: oklch(0.97 0.02 250);
+  --color-brand-100: oklch(0.93 0.04 250);
+  --color-brand-500: oklch(0.60 0.20 250);
+  --color-brand-600: oklch(0.52 0.20 250);
+  --color-brand-700: oklch(0.45 0.19 250);
+
+  --color-neutral-50: oklch(0.98 0 0);
+  --color-neutral-200: oklch(0.90 0 0);
+  --color-neutral-700: oklch(0.35 0 0);
+  --color-neutral-900: oklch(0.15 0 0);
+
+  --color-success-500: oklch(0.72 0.19 150);
+  --color-warning-500: oklch(0.80 0.18 85);
+  --color-danger-500: oklch(0.63 0.22 25);
+  --color-danger-600: oklch(0.55 0.22 25);
+
+  --radius-ds-sm: 0.25rem;
+  --radius-ds-md: 0.5rem;
+  --radius-ds-lg: 0.75rem;
+
+  --shadow-ds-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-ds-md: 0 4px 6px rgb(0 0 0 / 0.10);
+}

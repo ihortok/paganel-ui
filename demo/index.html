@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paganel UI — Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50 p-8">
+    <div class="mx-auto max-w-2xl space-y-8">
+      <h1 class="text-2xl font-bold text-neutral-900">Paganel UI Demo</h1>
+
+      <section class="card">
+        <h2 class="card-header">Card title</h2>
+        <p class="card-body">
+          This body text, the white background, the shadow, and the rounded corners all come
+          from the <code>.card</code> component class defined in <code>css/components/card.css</code>.
+        </p>
+        <div class="card-footer flex gap-2">
+          <button class="btn btn-primary btn-md">Primary</button>
+          <button class="btn btn-secondary btn-md">Secondary</button>
+          <button class="btn btn-danger btn-md">Danger</button>
+        </div>
+      </section>
+
+      <section class="flex flex-wrap gap-2">
+        <span class="badge badge-brand">Brand</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span>
+      </section>
+
+      <section class="space-y-2">
+        <div class="alert alert-info">Heads up — this is an info alert.</div>
+        <div class="alert alert-success">Nice — this is a success alert.</div>
+        <div class="alert alert-warning">Careful — this is a warning alert.</div>
+        <div class="alert alert-danger">Uh oh — this is a danger alert.</div>
+      </section>
+
+      <section class="dropdown">
+        <button
+          class="btn btn-secondary btn-md"
+          data-ds-toggle="dropdown"
+          aria-controls="demo-menu"
+          aria-expanded="false"
+        >
+          Open menu
+        </button>
+        <div id="demo-menu" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+          <button class="dropdown-item" data-ds-dismiss="dropdown">Profile</button>
+          <button class="dropdown-item" data-ds-dismiss="dropdown">Settings</button>
+          <button class="dropdown-item" data-ds-dismiss="dropdown">Sign out</button>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

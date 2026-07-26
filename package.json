@@ -1,0 +1,48 @@
+{
+  "name": "paganel-ui",
+  "version": "0.1.0",
+  "description": "A Tailwind CSS based design system: component classes + vanilla JS behaviors, framework-agnostic (Rails, plain HTML, or any JS toolchain).",
+  "type": "module",
+  "license": "ISC",
+  "author": "",
+  "sideEffects": true,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "style": "./css/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./browser": "./dist/index.global.js",
+    "./css": "./css/index.css",
+    "./css/*": "./css/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "css",
+    "README.md"
+  ],
+  "workspaces": [
+    "demo"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "jsdom": "^25.0.1",
+    "tailwindcss": "^4.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

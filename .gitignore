@@ -1,0 +1,6 @@
+node_modules/
+dist/
+demo/dist/
+demo/public/tailwind.css
+*.log
+.DS_Store

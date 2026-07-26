@@ -1,0 +1,21 @@
+@layer components {
+  .alert {
+    @apply flex gap-3 rounded-ds-md border p-4 text-sm;
+  }
+
+  .alert-info {
+    @apply bg-brand-50 border-brand-100 text-brand-700;
+  }
+
+  .alert-success {
+    @apply bg-success-500/10 border-success-500/20 text-neutral-900;
+  }
+
+  .alert-warning {
+    @apply bg-warning-500/10 border-warning-500/20 text-neutral-900;
+  }
+
+  .alert-danger {
+    @apply bg-danger-500/10 border-danger-500/20 text-neutral-900;
+  }
+}
