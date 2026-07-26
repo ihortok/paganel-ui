@@ -6,131 +6,145 @@
     <title>Paganel UI — Demo</title>
   </head>
   <body class="min-h-screen bg-neutral-50">
-    <div class="flex min-h-screen">
-      <aside class="sidebar">
-        <div class="sidebar-section-title">Menu</div>
-        <a class="sidebar-link sidebar-link-active" href="#">Dashboard</a>
-        <a class="sidebar-link" href="#">Components</a>
-        <a class="sidebar-link" href="#">Settings</a>
-        <div class="sidebar-section-title">Account</div>
-        <a class="sidebar-link" href="#">Profile</a>
-        <a class="sidebar-link" href="#">Sign out</a>
-      </aside>
+    <aside class="sidebar">
+      <div class="sidebar-section-title">Menu</div>
+      <a class="sidebar-link sidebar-link-active" href="#">Dashboard</a>
+      <a class="sidebar-link" href="#">Components</a>
+      <a class="sidebar-link" href="#">Settings</a>
+      <div class="sidebar-section-title">Account</div>
+      <a class="sidebar-link" href="#">Profile</a>
+      <a class="sidebar-link" href="#">Sign out</a>
+    </aside>
 
-      <div class="flex-1">
-        <header class="header">
-          <span class="header-brand">Paganel UI</span>
-          <nav class="header-nav">
-            <a href="#">Docs</a>
-            <a href="#">Components</a>
-          </nav>
-          <div class="header-actions">
-            <button class="btn btn-secondary btn-sm">Sign in</button>
-            <button class="btn btn-primary btn-sm">Get started</button>
+    <header class="header">
+      <span class="header-brand">Paganel UI</span>
+      <nav class="header-nav">
+        <a href="#">Docs</a>
+        <a href="#">Components</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-secondary btn-sm">Sign in</button>
+        <button class="btn btn-primary btn-sm">Get started</button>
+
+        <div class="dropdown">
+          <button
+            class="rounded-full focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+            data-ds-toggle="dropdown"
+            aria-controls="user-menu"
+            aria-expanded="false"
+          >
+            <img class="avatar" src="/images/tabby-cat-square.jpg" alt="User avatar" />
+          </button>
+          <div id="user-menu" class="dropdown-menu right-0" data-ds-panel="dropdown" hidden>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Profile</button>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Settings</button>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Sign out</button>
           </div>
-        </header>
-
-        <main class="mx-auto max-w-3xl space-y-10 p-8">
-          <h1 class="text-2xl font-bold text-neutral-900">Paganel UI Demo</h1>
-
-          <section class="card">
-            <h2 class="card-header">Card title</h2>
-            <p class="card-body">
-              This body text, the white background, the shadow, and the rounded corners all come
-              from the <code>.card</code> component class defined in <code>css/components/card.css</code>.
-            </p>
-            <div class="card-footer flex gap-2">
-              <button class="btn btn-primary btn-md">Primary</button>
-              <button class="btn btn-secondary btn-md">Secondary</button>
-              <button class="btn btn-danger btn-md">Danger</button>
-            </div>
-          </section>
-
-          <section class="space-y-2">
-            <h2 class="text-lg font-semibold text-neutral-900">Card variants</h2>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="card">
-                <div class="card-media">
-                  <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
-                </div>
-                <h3 class="card-header">Media card</h3>
-                <p class="card-body">Image bleeds to the card edges via <code>.card-media</code>.</p>
-              </div>
-              <div class="card card-horizontal">
-                <div class="card-horizontal-media">
-                  <img src="/images/tabby-cat-square.jpg" alt="Close-up of a tabby cat's face" />
-                </div>
-                <div>
-                  <h3 class="card-header">Horizontal card</h3>
-                  <p class="card-body">Image and content side by side via <code>.card-horizontal</code>.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="flex flex-wrap gap-2">
-            <span class="badge badge-brand">Brand</span>
-            <span class="badge badge-success">Success</span>
-            <span class="badge badge-warning">Warning</span>
-            <span class="badge badge-danger">Danger</span>
-          </section>
-
-          <section class="space-y-2">
-            <div class="alert alert-info">Heads up — this is an info alert.</div>
-            <div class="alert alert-success">Nice — this is a success alert.</div>
-            <div class="alert alert-warning">Careful — this is a warning alert.</div>
-            <div class="alert alert-danger">Uh oh — this is a danger alert.</div>
-          </section>
-
-          <section class="dropdown">
-            <button
-              class="btn btn-secondary btn-md"
-              data-ds-toggle="dropdown"
-              aria-controls="demo-menu"
-              aria-expanded="false"
-            >
-              Open menu
-            </button>
-            <div id="demo-menu" class="dropdown-menu" data-ds-panel="dropdown" hidden>
-              <button class="dropdown-item" data-ds-dismiss="dropdown">Profile</button>
-              <button class="dropdown-item" data-ds-dismiss="dropdown">Settings</button>
-              <button class="dropdown-item" data-ds-dismiss="dropdown">Sign out</button>
-            </div>
-          </section>
-
-          <section class="card max-w-md">
-            <h2 class="card-header">Contact form</h2>
-            <form class="flex flex-col gap-4">
-              <div class="field">
-                <label class="label" for="name">Name</label>
-                <input class="input" id="name" type="text" placeholder="Jane Doe" />
-                <span class="hint">As it should appear on your profile.</span>
-              </div>
-              <div class="field">
-                <label class="label" for="email">Email</label>
-                <input
-                  class="input input-error"
-                  id="email"
-                  type="email"
-                  value="not-an-email"
-                  aria-invalid="true"
-                  aria-describedby="email-error"
-                />
-                <span class="error-message" id="email-error">Enter a valid email address.</span>
-              </div>
-              <div class="field">
-                <label class="label" for="message">Message</label>
-                <textarea class="textarea" id="message" placeholder="How can we help?"></textarea>
-              </div>
-              <label class="checkbox-label">
-                <input class="checkbox" type="checkbox" />
-                Subscribe to updates
-              </label>
-              <button class="btn btn-primary btn-md" type="submit">Send message</button>
-            </form>
-          </section>
-        </main>
+        </div>
       </div>
+    </header>
+
+    <div class="ml-60 pt-16">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <h1 class="text-2xl font-bold text-neutral-900">Paganel UI Demo</h1>
+
+        <section class="card">
+          <h2 class="card-header">Card title</h2>
+          <p class="card-body">
+            This body text, the white background, the shadow, and the rounded corners all come
+            from the <code>.card</code> component class defined in <code>css/components/card.css</code>.
+          </p>
+          <div class="card-footer flex gap-2">
+            <button class="btn btn-primary btn-md">Primary</button>
+            <button class="btn btn-secondary btn-md">Secondary</button>
+            <button class="btn btn-danger btn-md">Danger</button>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-lg font-semibold text-neutral-900">Card variants</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card">
+              <div class="card-media">
+                <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
+              </div>
+              <h3 class="card-header">Media card</h3>
+              <p class="card-body">Image bleeds to the card edges via <code>.card-media</code>.</p>
+            </div>
+            <div class="card card-horizontal">
+              <div class="card-horizontal-media">
+                <img src="/images/tabby-cat-square.jpg" alt="Close-up of a tabby cat's face" />
+              </div>
+              <div>
+                <h3 class="card-header">Horizontal card</h3>
+                <p class="card-body">Image and content side by side via <code>.card-horizontal</code>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-wrap gap-2">
+          <span class="badge badge-brand">Brand</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-danger">Danger</span>
+        </section>
+
+        <section class="space-y-2">
+          <div class="alert alert-info">Heads up — this is an info alert.</div>
+          <div class="alert alert-success">Nice — this is a success alert.</div>
+          <div class="alert alert-warning">Careful — this is a warning alert.</div>
+          <div class="alert alert-danger">Uh oh — this is a danger alert.</div>
+        </section>
+
+        <section class="dropdown">
+          <button
+            class="btn btn-secondary btn-md"
+            data-ds-toggle="dropdown"
+            aria-controls="demo-menu"
+            aria-expanded="false"
+          >
+            Open menu
+          </button>
+          <div id="demo-menu" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Profile</button>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Settings</button>
+            <button class="dropdown-item" data-ds-dismiss="dropdown">Sign out</button>
+          </div>
+        </section>
+
+        <section class="card max-w-md">
+          <h2 class="card-header">Contact form</h2>
+          <form class="flex flex-col gap-4">
+            <div class="field">
+              <label class="label" for="name">Name</label>
+              <input class="input" id="name" type="text" placeholder="Jane Doe" />
+              <span class="hint">As it should appear on your profile.</span>
+            </div>
+            <div class="field">
+              <label class="label" for="email">Email</label>
+              <input
+                class="input input-error"
+                id="email"
+                type="email"
+                value="not-an-email"
+                aria-invalid="true"
+                aria-describedby="email-error"
+              />
+              <span class="error-message" id="email-error">Enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label class="label" for="message">Message</label>
+              <textarea class="textarea" id="message" placeholder="How can we help?"></textarea>
+            </div>
+            <label class="checkbox-label">
+              <input class="checkbox" type="checkbox" />
+              Subscribe to updates
+            </label>
+            <button class="btn btn-primary btn-md" type="submit">Send message</button>
+          </form>
+        </section>
+      </main>
     </div>
 
     <script type="module" src="/src/main.ts"></script>

@@ -78,6 +78,7 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | `.header`, `.header-brand`, `.header-nav`, `.header-actions` | Top app-bar layout |
 | `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`) | Vertical nav layout |
 | `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
+| `.avatar` | Circular `<img>`, e.g. for a user menu trigger |
 
 ### Dropdown
 

@@ -1,0 +1,5 @@
+@layer components {
+  .avatar {
+    @apply block size-9 rounded-full object-cover;
+  }
+}

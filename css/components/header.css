@@ -1,6 +1,7 @@
 @layer components {
   .header {
-    @apply flex items-center justify-between gap-4 border-b border-neutral-200 bg-white px-6 py-4;
+    @apply fixed top-0 right-0 left-60 z-10 flex h-16 items-center justify-between gap-4
+           border-b border-neutral-200 bg-white px-6;
   }
 
   .header-brand {
