@@ -34,13 +34,15 @@
         ☰
       </button>
       <span class="header-brand">Paganel UI</span>
-      <nav class="header-nav">
+      <nav class="header-nav hidden lg:flex gap-4">
         <a href="#">Docs</a>
         <a href="#">Components</a>
       </nav>
       <div class="header-actions">
-        <button class="btn btn-secondary btn-sm">Sign in</button>
-        <button class="btn btn-primary btn-sm">Get started</button>
+        <div class="hidden lg:flex gap-2">
+          <button class="btn btn-secondary btn-sm">Sign in</button>
+          <button class="btn btn-primary btn-sm">Get started</button>
+        </div>
 
         <div class="dropdown">
           <button
@@ -70,7 +72,7 @@
             This body text, the white background, the shadow, and the rounded corners all come
             from the <code>.card</code> component class defined in <code>css/components/card.css</code>.
           </p>
-          <div class="card-footer flex gap-2">
+          <div class="card-footer flex flex-wrap gap-2">
             <button class="btn btn-primary btn-md">Primary</button>
             <button class="btn btn-secondary btn-md">Secondary</button>
             <button class="btn btn-danger btn-md">Danger</button>
@@ -79,7 +81,7 @@
 
         <section class="space-y-2">
           <h2 class="text-lg font-semibold text-neutral-900">Card variants</h2>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid md:grid-cols-2 gap-4">
             <div class="card">
               <div class="card-media">
                 <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
