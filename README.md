@@ -76,7 +76,8 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | `.alert` + `.alert-{info,success,warning,danger}` | |
 | `.dropdown` / `.dropdown-menu` / `.dropdown-item` | See below for the JS wiring |
 | `.header`, `.header-brand`, `.header-nav`, `.header-actions` | Top app-bar layout |
-| `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`) | Vertical nav layout |
+| `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`), `.sidebar-footer` | Vertical nav layout |
+| `.sidebar-drawer`, `.sidebar-backdrop`, `.sidebar-toggle` | Off-canvas mobile drawer for `.sidebar` — see below for the JS wiring |
 | `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
 | `.avatar` | Circular `<img>`, e.g. for a user menu trigger |
 
@@ -97,13 +98,33 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 
 Opens/closes on trigger click, closes on outside click, closes on <kbd>Escape</kbd> (returning focus to the trigger), and closes on `data-ds-dismiss` clicks inside the panel.
 
+### Drawer (off-canvas mobile sidebar)
+
+```html
+<button class="btn btn-primary btn-md sidebar-toggle"
+        data-ds-toggle="drawer" aria-controls="sidebar-drawer" aria-expanded="false"
+        aria-label="Toggle sidebar">
+  ☰
+</button>
+
+<div id="sidebar-drawer" class="sidebar-drawer" data-ds-panel="drawer">
+  <div class="sidebar-backdrop" data-ds-dismiss="drawer"></div>
+  <aside class="sidebar">
+    <a class="sidebar-link" href="/" data-ds-dismiss="drawer">Dashboard</a>
+    <!-- ... -->
+  </aside>
+</div>
+```
+
+Shares the same click/outside-click/<kbd>Escape</kbd>/`data-ds-dismiss` engine as the dropdown above (`.sidebar` is always visible at the `lg` breakpoint and up, no toggle needed there). Unlike the dropdown, it doesn't toggle the `hidden` attribute — Tailwind's Preflight makes `[hidden]` `display: none !important`, which can't be animated — so it drives visibility via a `data-state="open"/"closed"` attribute plus CSS `transform`/`visibility`, letting it slide in/out smoothly.
+
 ## Local development
 
 ```sh
 npm install          # installs root + demo workspace
 npm run build        # tsup -> dist/{index.js,index.cjs,index.d.ts,index.global.js}
 npm run typecheck
-npm test             # vitest (jsdom) — delegation, dropdown behavior, Turbo-swap resilience
+npm test             # vitest (jsdom) — delegation, dropdown/drawer behavior, Turbo-swap resilience
 ```
 
 `demo/` is an npm workspace that consumes the root package like a real installer would (`"paganel-ui": "file:.."`), for visually checking the compiled CSS and the dropdown behavior in a browser:

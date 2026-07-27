@@ -5,6 +5,23 @@
   "type": "module",
   "license": "MIT",
   "author": "ihortok",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihortok/paganel-ui.git"
+  },
+  "homepage": "https://github.com/ihortok/paganel-ui#readme",
+  "bugs": {
+    "url": "https://github.com/ihortok/paganel-ui/issues"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "design-system",
+    "css",
+    "ui-components",
+    "component-library",
+    "rails"
+  ],
   "sideEffects": true,
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -12,9 +29,14 @@
   "style": "./css/index.css",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./browser": "./dist/index.global.js",
     "./css": "./css/index.css",
