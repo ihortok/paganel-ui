@@ -26,6 +26,18 @@
     @apply block h-48 w-full object-cover;
   }
 
+  .card-book-cover {
+    @apply aspect-[2/3] w-1/3 shrink-0 self-start overflow-hidden rounded-ds-md;
+  }
+
+  .card-book-cover img {
+    @apply block h-full w-full object-cover;
+  }
+
+  .card-book-author {
+    @apply mb-3 text-sm text-neutral-500;
+  }
+
   /* Layout modifier — combine with .card in markup: class="card card-horizontal" */
   .card-horizontal {
     @apply flex gap-4;

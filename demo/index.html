@@ -82,21 +82,44 @@
 
         <section class="space-y-2">
           <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Card variants</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="card">
-              <div class="card-media">
-                <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
+          <div class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="card">
+                <div class="card-media">
+                  <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
+                </div>
+                <h3 class="card-header">Media card</h3>
+                <p class="card-body">Image bleeds to the card edges via <code>.card-media</code>.</p>
               </div>
-              <h3 class="card-header">Media card</h3>
-              <p class="card-body">Image bleeds to the card edges via <code>.card-media</code>.</p>
+              <div class="card card-horizontal">
+                <div class="card-horizontal-media">
+                  <img src="/images/tabby-cat-square.jpg" alt="Close-up of a tabby cat's face" />
+                </div>
+                <div>
+                  <h3 class="card-header">Horizontal card</h3>
+                  <p class="card-body">Image and content side by side via <code>.card-horizontal</code>.</p>
+                </div>
+              </div>
             </div>
             <div class="card card-horizontal">
-              <div class="card-horizontal-media">
-                <img src="/images/tabby-cat-square.jpg" alt="Close-up of a tabby cat's face" />
+              <div class="card-book-cover">
+                <img src="/images/book.jpg" alt="Cover of The Dragon's Legacy" />
               </div>
               <div>
-                <h3 class="card-header">Horizontal card</h3>
-                <p class="card-body">Image and content side by side via <code>.card-horizontal</code>.</p>
+                <h3 class="card-header">The Dragon's Legacy</h3>
+                <p class="card-book-author">by Author Name</p>
+                <p class="card-body">A high fantasy epic of ancient pacts and a kingdom built on dragonfire.</p>
+                <form class="card-footer flex flex-col gap-3">
+                  <div class="field">
+                    <label class="label" for="book-shelf">Add to my list</label>
+                    <select class="select" id="book-shelf">
+                      <option>Want to read</option>
+                      <option>Currently reading</option>
+                      <option>Read</option>
+                    </select>
+                  </div>
+                  <button class="btn btn-primary btn-md" type="submit">Add to list</button>
+                </form>
               </div>
             </div>
           </div>
