@@ -1,8 +1,6 @@
 @layer components {
-  /* z-50: stays above .sidebar (z-40) and .sidebar-backdrop (z-30) so the
-     drawer toggle button remains visible and clickable while the drawer is open. */
   .header {
-    @apply fixed top-0 right-0 left-0 z-50 flex h-16 items-center justify-between gap-4
+    @apply fixed top-0 right-0 left-0 z-10 flex h-16 items-center justify-between gap-4
            border-b border-neutral-200 bg-white px-6
            lg:left-60;
   }

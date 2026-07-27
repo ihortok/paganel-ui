@@ -47,4 +47,15 @@
   .sidebar-footer {
     @apply mt-auto border-t border-neutral-200 pt-4;
   }
+
+  /*
+   * Floating drawer toggle, fixed to the bottom-right corner. z-50 — above
+   * .header (z-10), .sidebar-backdrop (z-30), and .sidebar (z-40) — so it
+   * stays visible and clickable as the close control while the drawer (and
+   * its full-viewport backdrop) is open. lg:hidden: no toggle needed once
+   * the sidebar is permanently visible.
+   */
+  .sidebar-toggle {
+    @apply fixed right-6 bottom-6 z-50 rounded-full shadow-ds-md lg:hidden;
+  }
 }
