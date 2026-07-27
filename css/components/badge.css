@@ -1,6 +1,11 @@
 @layer components {
+  /* Uppercase + tracked — deliberately echoes .sidebar-section-title's
+     existing uppercase tracking-wide treatment, turning it into a
+     consistent "label" signature shared across the system. font-semibold
+     (not font-medium) because uppercase text needs a touch more weight to
+     read well at this size. */
   .badge {
-    @apply inline-flex items-center rounded-ds-sm px-2 py-0.5 text-xs font-medium;
+    @apply inline-flex items-center rounded-ds-sm px-2 py-0.5 text-xs font-semibold uppercase tracking-wide;
   }
 
   .badge-brand {

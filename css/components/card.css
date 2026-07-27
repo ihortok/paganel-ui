@@ -1,25 +1,25 @@
 @layer components {
   .card {
-    @apply bg-white shadow-ds-md rounded-ds-lg p-4;
+    @apply bg-white shadow-ds-md rounded-ds-lg p-5;
   }
 
   .card-header {
-    @apply mb-2 text-lg font-semibold text-neutral-900;
+    @apply mb-2 font-serif text-lg font-semibold tracking-tight text-neutral-900;
   }
 
   .card-body {
-    @apply text-neutral-700;
+    @apply leading-relaxed text-neutral-700;
   }
 
   .card-footer {
-    @apply mt-4 pt-4 border-t border-neutral-200;
+    @apply mt-5 pt-5 border-t border-neutral-200;
   }
 
   /* Image bleeding to the card's top/left/right edges (cancels .card's own
-     p-4); mb-4 restores spacing before the next element since padding alone
+     p-5); mb-5 restores spacing before the next element since padding alone
      doesn't create a gap between children. */
   .card-media {
-    @apply -mx-4 -mt-4 mb-4 overflow-hidden rounded-t-ds-lg;
+    @apply -mx-5 -mt-5 mb-5 overflow-hidden rounded-t-ds-lg;
   }
 
   .card-media img {

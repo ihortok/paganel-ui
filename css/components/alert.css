@@ -1,6 +1,6 @@
 @layer components {
   .alert {
-    @apply flex gap-3 rounded-ds-md border p-4 text-sm;
+    @apply flex gap-3 rounded-ds-md border p-4 text-sm leading-relaxed;
   }
 
   .alert-info {
