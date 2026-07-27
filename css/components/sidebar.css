@@ -56,6 +56,6 @@
    * the sidebar is permanently visible.
    */
   .sidebar-toggle {
-    @apply fixed right-6 bottom-6 z-50 rounded-full shadow-ds-md lg:hidden;
+    @apply fixed right-6 bottom-6 z-50 h-10 w-10 rounded-full p-0 shadow-ds-md lg:hidden;
   }
 }
