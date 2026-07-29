@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-page="tokens">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design tokens — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Design tokens</h1>
+          <p class="text-sm text-neutral-700">
+            Everything below is a <code>@theme</code> variable in <code>css/tokens.css</code>, which
+            means Tailwind generates real utilities from it — <code>bg-brand-600</code>,
+            <code>rounded-ds-lg</code>, <code>shadow-ds-md</code> — and your own markup can use them
+            directly alongside the component classes.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Brand</h2>
+          <p class="text-sm text-neutral-700">
+            A warm terracotta/clay ramp. Only these five steps are defined — the lightness
+            progression is deliberate, so text contrast against white and black is known rather
+            than guessed.
+          </p>
+          <div class="card">
+            <div class="card-body grid gap-3 sm:grid-cols-2">
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md border border-neutral-200 bg-brand-50"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>brand-50</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.97 0.020 45)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md border border-neutral-200 bg-brand-100"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>brand-100</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.93 0.045 45)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-brand-500"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>brand-500</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.62 0.130 45)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-brand-600"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>brand-600</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.54 0.140 45) — <code>.btn-primary</code></p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-brand-700"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>brand-700</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.46 0.130 45)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Neutrals</h2>
+          <p class="text-sm text-neutral-700">
+            Warm "stone" neutrals — a small positive chroma at a warm hue rather than pure
+            achromatic gray, subtle enough not to read as tinted.
+          </p>
+          <div class="card">
+            <div class="card-body grid gap-3 sm:grid-cols-2">
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md border border-neutral-200 bg-neutral-50"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>neutral-50</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.98 0.004 75) — the page background</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-neutral-200"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>neutral-200</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.90 0.007 75) — every border</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-neutral-700"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>neutral-700</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.35 0.010 70) — body text</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-neutral-900"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>neutral-900</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.16 0.008 65) — headings</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-info">
+            <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+            </svg>
+            <div>
+              <p class="font-semibold">Only four neutral steps are overridden</p>
+              <p>
+                Anything else — <code>neutral-400</code>, <code>neutral-500</code>, which the form
+                hints, book bylines and sidebar section titles all use — falls through to Tailwind's
+                stock <em>cool</em> neutral, sitting next to these warm ones. Worth knowing before
+                you reach for a step that isn't in the list above.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-center gap-3">
+              <div class="size-12 shrink-0 rounded-ds-md bg-neutral-400"></div>
+              <p class="text-sm text-neutral-700"><code>neutral-400</code> — not defined by this package; Tailwind's default.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Semantic</h2>
+          <p class="text-sm text-neutral-700">
+            Slightly desaturated so they feel cohesive with the muted brand hue instead of clashing
+            as loud primaries. Components mostly use these at 10% opacity as a wash.
+          </p>
+          <div class="card">
+            <div class="card-body grid gap-3 sm:grid-cols-2">
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-success-500"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>success-500</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.70 0.15 150)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-warning-500"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>warning-500</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.78 0.14 85)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-danger-500"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>danger-500</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.60 0.18 25) — <code>.btn-danger</code></p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="size-12 shrink-0 rounded-ds-md bg-danger-600"></div>
+                <div class="text-sm">
+                  <p class="font-medium text-neutral-900"><code>danger-600</code></p>
+                  <p class="text-xs text-neutral-500">oklch(0.52 0.18 25) — its hover</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Radius</h2>
+          <p class="text-sm text-neutral-700">
+            Generous and soft — cozy rather than clipped. Prefixed <code>ds-</code> so they never
+            collide with Tailwind's own <code>rounded-*</code> scale.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-end gap-6">
+              <div class="flex flex-col items-center gap-2">
+                <div class="size-20 rounded-ds-sm bg-brand-100"></div>
+                <span class="text-xs text-neutral-500"><code>rounded-ds-sm</code> · 0.375rem</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <div class="size-20 rounded-ds-md bg-brand-100"></div>
+                <span class="text-xs text-neutral-500"><code>rounded-ds-md</code> · 0.75rem</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <div class="size-20 rounded-ds-lg bg-brand-100"></div>
+                <span class="text-xs text-neutral-500"><code>rounded-ds-lg</code> · 1.25rem</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Shadow</h2>
+          <p class="text-sm text-neutral-700">
+            Warm-tinted rather than pure black, and layered — a soft "lifted paper" feel instead of
+            a flat drop shadow.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-end gap-8">
+              <div class="flex flex-col items-center gap-3">
+                <div class="size-20 rounded-ds-md bg-white shadow-ds-sm"></div>
+                <span class="text-xs text-neutral-500"><code>shadow-ds-sm</code></span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="size-20 rounded-ds-md bg-white shadow-ds-md"></div>
+                <span class="text-xs text-neutral-500"><code>shadow-ds-md</code> — used by <code>.card</code></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Type</h2>
+          <p class="text-sm text-neutral-700">
+            <code>--font-serif</code> overrides Tailwind's default to prioritize a warmer, more
+            literary system serif where one exists, falling back cleanly elsewhere. Zero
+            dependency — no font files ship. Headings and <code>.card-header</code> use it; body
+            text stays on the sans stack.
+          </p>
+          <div class="card">
+            <div class="card-body space-y-3">
+              <p class="font-serif text-2xl font-bold tracking-tight text-neutral-900">The Dragon's Legacy</p>
+              <p class="font-serif text-lg font-semibold tracking-tight text-neutral-900">A high fantasy epic</p>
+              <p class="text-sm text-neutral-700">
+                Body copy stays on the default sans stack — the serif is for titles, where its
+                warmth reads as character rather than as noise.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

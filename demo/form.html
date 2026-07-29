@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-page="form">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form controls — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Form controls</h1>
+          <p class="text-sm text-neutral-700">
+            <code>.input</code>, <code>.textarea</code> and <code>.select</code> are one shared rule,
+            so the three line up by default. There is no <code>.form</code> container class — form
+            layout is <code>.field</code> for each control plus ordinary layout utilities around them.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">A complete form</h2>
+          <div class="card max-w-md">
+            <h3 class="card-header">Contact form</h3>
+            <form class="flex flex-col gap-4">
+              <div class="field">
+                <label class="label" for="name">Name</label>
+                <input class="input" id="name" type="text" placeholder="Jane Doe" />
+                <span class="hint">As it should appear on your profile.</span>
+              </div>
+              <div class="field">
+                <label class="label" for="email">Email</label>
+                <input
+                  class="input input-error"
+                  id="email"
+                  type="email"
+                  value="not-an-email"
+                  aria-invalid="true"
+                  aria-describedby="email-error"
+                />
+                <span class="error-message" id="email-error">Enter a valid email address.</span>
+              </div>
+              <div class="field">
+                <label class="label" for="message">Message</label>
+                <textarea class="textarea" id="message" placeholder="How can we help?"></textarea>
+              </div>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+                Subscribe to updates
+              </label>
+              <button class="btn btn-primary btn-md" type="submit">Send message</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">The field stack</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.field</code> is a flex column with <code>gap-1.5</code>, so it spaces however many
+            children you give it — label, control, hint and error message all at once.
+          </p>
+          <div class="card max-w-md">
+            <div class="card-body">
+              <div class="field">
+                <label class="label" for="shelf-name">Shelf name</label>
+                <input class="input" id="shelf-name" type="text" value="To read in 2027" aria-describedby="shelf-hint shelf-error" />
+                <span class="hint" id="shelf-hint">Shown in your sidebar.</span>
+                <span class="error-message" id="shelf-error">A shelf with this name already exists.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Controls</h2>
+          <div class="card max-w-md">
+            <div class="card-body flex flex-col gap-4">
+              <div class="field">
+                <label class="label" for="shelf">Add to my list</label>
+                <select class="select" id="shelf">
+                  <option>Want to read</option>
+                  <option>Currently reading</option>
+                  <option>Read</option>
+                </select>
+                <span class="hint">You can change this later.</span>
+              </div>
+              <div class="field">
+                <label class="label" for="rating">Rating</label>
+                <input class="input" id="rating" type="number" min="1" max="5" value="4" />
+              </div>
+              <div class="field">
+                <label class="label" for="notes">Notes</label>
+                <textarea class="textarea" id="notes" placeholder="What did you think?"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Error states</h2>
+          <p class="text-sm text-neutral-700">
+            The <code>-error</code> modifiers only recolor the border and focus ring. They don't
+            announce anything, so you still set <code>aria-invalid="true"</code> and point
+            <code>aria-describedby</code> at the message.
+          </p>
+          <div class="card max-w-md">
+            <div class="card-body flex flex-col gap-4">
+              <div class="field">
+                <label class="label" for="err-input">Title</label>
+                <input
+                  class="input input-error"
+                  id="err-input"
+                  type="text"
+                  value=""
+                  aria-invalid="true"
+                  aria-describedby="err-input-msg"
+                />
+                <span class="error-message" id="err-input-msg">A title is required.</span>
+              </div>
+              <div class="field">
+                <label class="label" for="err-select">Shelf</label>
+                <select
+                  class="select select-error"
+                  id="err-select"
+                  aria-invalid="true"
+                  aria-describedby="err-select-msg"
+                >
+                  <option value="">Choose a shelf…</option>
+                  <option>Want to read</option>
+                  <option>Read</option>
+                </select>
+                <span class="error-message" id="err-select-msg">Pick a shelf to continue.</span>
+              </div>
+              <div class="field">
+                <label class="label" for="err-textarea">Review</label>
+                <textarea
+                  class="textarea textarea-error"
+                  id="err-textarea"
+                  aria-invalid="true"
+                  aria-describedby="err-textarea-msg"
+                >Too short</textarea>
+                <span class="error-message" id="err-textarea-msg">Reviews need at least 20 characters.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Disabled</h2>
+          <p class="text-sm text-neutral-700">
+            Built into the shared rule: <code>disabled:opacity-50</code> plus
+            <code>disabled:pointer-events-none</code>.
+          </p>
+          <div class="card max-w-md">
+            <div class="card-body flex flex-col gap-4">
+              <div class="field">
+                <label class="label" for="dis-input">ISBN</label>
+                <input class="input" id="dis-input" type="text" value="978-0-00-000000-0" disabled />
+              </div>
+              <div class="field">
+                <label class="label" for="dis-select">Format</label>
+                <select class="select" id="dis-select" disabled>
+                  <option>Hardcover</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="label" for="dis-textarea">Publisher note</label>
+                <textarea class="textarea" id="dis-textarea" disabled>Locked by the publisher.</textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Checkboxes</h2>
+          <div class="card max-w-md">
+            <div class="card-body flex flex-col gap-2">
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" />
+                Subscribe to updates
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" checked />
+                Show my reviews publicly
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" checked disabled />
+                Keep reading history (required)
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox" disabled />
+                Beta features (not available on your plan)
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Not covered yet: radios</h2>
+          <p class="text-sm text-neutral-700">
+            No radio class ships, so a radio group currently renders with browser defaults next to
+            the styled controls above. Left visible on purpose rather than hidden behind a one-off
+            utility — it's a real gap in the system.
+          </p>
+          <div class="card max-w-md">
+            <div class="card-body flex flex-col gap-2">
+              <label class="checkbox-label">
+                <input type="radio" name="visibility" checked />
+                Public shelf
+              </label>
+              <label class="checkbox-label">
+                <input type="radio" name="visibility" />
+                Private shelf
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.field</code></dt>
+              <dd>Flex column with <code>gap-1.5</code> — wraps one control with its label, hint and error.</dd>
+              <dt><code>.label</code></dt>
+              <dd>Small medium-weight label text.</dd>
+              <dt><code>.input</code> / <code>.textarea</code> / <code>.select</code></dt>
+              <dd>One shared rule: border, radius, padding, focus ring, disabled state.
+                <code>.textarea</code> adds a minimum height and vertical resize.</dd>
+              <dt><code>.input-error</code> / <code>.textarea-error</code> / <code>.select-error</code></dt>
+              <dd>Modifiers — combine with the base class. Recolor border and focus ring only.</dd>
+              <dt><code>.checkbox</code></dt>
+              <dd>Sized box with a brand accent color and a focus ring.</dd>
+              <dt><code>.checkbox-label</code></dt>
+              <dd>The row around a checkbox and its text, aligned with <code>gap-2</code>.</dd>
+              <dt><code>.hint</code></dt>
+              <dd>Small muted helper text.</dd>
+              <dt><code>.error-message</code></dt>
+              <dd>Small danger-colored validation text.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

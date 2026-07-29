@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" data-page="icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icons — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Icons</h1>
+          <p class="text-sm text-neutral-700">
+            Paganel UI ships <strong>no icon set</strong> and has no icon dependency.
+            <code>.icon</code> is a neutral fixed-size slot — combine it in markup with
+            whatever your app uses. Both rows below share one box, so they align in a
+            column regardless of origin; an icon font's <code>&lt;i&gt;</code> slots into
+            the same class identically.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-col gap-1">
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+                Inline SVG — no dependency at all
+              </span>
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <span class="icon" aria-hidden="true">📚</span> A plain text glyph
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Sizes</h2>
+          <p class="text-sm text-neutral-700">
+            Absolute sizes, not <code>em</code>-relative: each class sets a square size and a
+            matching <code>line-height</code>, so an icon doesn't drift when the surrounding
+            font-size changes.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-end gap-8">
+              <div class="flex flex-col items-center gap-2">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+                <span class="text-xs text-neutral-500"><code>icon icon-sm</code> · 16px</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+                <span class="text-xs text-neutral-500"><code>icon</code> · 20px</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <svg class="icon icon-lg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+                <span class="text-xs text-neutral-500"><code>icon icon-lg</code> · 24px</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">One box, many sources</h2>
+          <p class="text-sm text-neutral-700">
+            The outline below is the <code>.icon</code> box itself, made visible. Left alone these
+            four would size themselves by completely different rules — an icon font sizes in
+            <code>em</code>, a bare inline <code>&lt;svg&gt;</code> has no usable intrinsic size, a
+            glyph is whatever the font gives. The shared box is the whole point.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-col gap-1">
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <svg class="icon outline outline-1 outline-brand-500/30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+                An inline SVG
+              </span>
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <span class="icon outline outline-1 outline-brand-500/30" aria-hidden="true">📚</span>
+                An emoji
+              </span>
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <span class="icon outline outline-1 outline-brand-500/30" aria-hidden="true">✕</span>
+                A text glyph
+              </span>
+              <span class="flex items-center gap-2 px-3 py-2 text-sm text-neutral-700">
+                <span class="icon outline outline-1 outline-brand-500/30" aria-hidden="true"></span>
+                Empty — where an icon font's <code>&lt;i class="icon …"&gt;</code> would go
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-neutral-700">
+            This demo shows icon-font markup as code only, never as a live element, because it
+            carries no icon dependency of any kind — no npm package, no webfont, no external
+            request. If you want a font, install it in your own project so you pick the library and
+            version and your own asset pipeline handles its font files.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Already handled by other components</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.btn</code>, <code>.sidebar-link</code>, <code>.dropdown-item</code> and
+            <code>.alert</code> each lay out an icon beside their label with the right spacing, so no
+            wrapper markup is needed. Down a list, the shared box is what keeps the labels aligned.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-col gap-3">
+              <div class="flex flex-wrap gap-2">
+                <button class="btn btn-primary btn-md">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg> In a button
+                </button>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span class="sidebar-link">
+                  <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
+                  </svg>
+                  In a sidebar link
+                </span>
+                <span class="sidebar-link">
+                  <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                  </svg>
+                  A second one, to show the column
+                </span>
+                <span class="sidebar-link">
+                  <span class="icon" aria-hidden="true">📚</span>
+                  A glyph in the same column
+                </span>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span class="dropdown-item">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                  </svg> In a dropdown item
+                </span>
+              </div>
+              <div class="alert alert-info">
+                <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                </svg>
+                In an alert.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Details worth knowing</h2>
+          <div class="card">
+            <div class="card-body space-y-3 text-sm">
+              <p><code>.icon</code> is <code>inline-block</code>, not <code>inline-flex</code>.
+                Icon-font CSS is typically unlayered, and unlayered rules beat <code>@layer</code>
+                ones — matching the <code>display: inline-block</code> such sets already use avoids a
+                cascade fight this would lose. Centring comes from <code>text-center</code> plus the
+                matching line-height instead.</p>
+              <p>Icons here are decorative, so they carry <code>aria-hidden="true"</code> and the
+                label beside them does the talking. When an icon is the only content — an icon-only
+                button — put an <code>aria-label</code> on the control.</p>
+              <p><code>shrink-0</code> is part of the base, so an icon never gets squeezed when its
+                flex container runs out of room.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.icon</code></dt>
+              <dd>The slot: 20×20, <code>inline-block</code>, <code>shrink-0</code>, centred, with a matching line-height.</dd>
+              <dt><code>.icon-sm</code></dt>
+              <dd>Modifier — 16×16. Combine: <code>class="icon icon-sm"</code>.</dd>
+              <dt><code>.icon-lg</code></dt>
+              <dd>Modifier — 24×24.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-page="avatar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatar — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Avatar</h1>
+          <p class="text-sm text-neutral-700">
+            One class doing one job: a fixed-size circle that crops whatever image you give it.
+            It's <code>block</code>, so inside a row it's the parent that aligns it.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Default</h2>
+          <div class="card">
+            <div class="card-body">
+              <img class="avatar" src="/images/tabby-cat-square.jpg" alt="Jane Doe" />
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Any aspect ratio, one circle</h2>
+          <p class="text-sm text-neutral-700">
+            This is what <code>object-cover</code> is in the class for. Three source images —
+            square, landscape and portrait 2:3 — with no per-image handling. Uploaded avatars are
+            never the shape you hoped for.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-end gap-6">
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar" src="/images/tabby-cat-square.jpg" alt="Square source" />
+                <span class="text-xs text-neutral-500">square</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar" src="/images/tabby-cat.jpg" alt="Landscape source" />
+                <span class="text-xs text-neutral-500">landscape</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar" src="/images/book.jpg" alt="Portrait source" />
+                <span class="text-xs text-neutral-500">portrait 2:3</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Sizes</h2>
+          <p class="text-sm text-neutral-700">
+            No <code>.avatar-sm</code> / <code>.avatar-lg</code> ships. Utilities sit above
+            <code>@layer components</code> in the cascade, so a plain <code>size-*</code> utility
+            overrides the default without needing a modifier class.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-end gap-6">
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar size-8" src="/images/tabby-cat-square.jpg" alt="" />
+                <span class="text-xs text-neutral-500"><code>avatar size-8</code></span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar" src="/images/tabby-cat-square.jpg" alt="" />
+                <span class="text-xs text-neutral-500"><code>avatar</code></span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar size-12" src="/images/tabby-cat-square.jpg" alt="" />
+                <span class="text-xs text-neutral-500"><code>avatar size-12</code></span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <img class="avatar size-16" src="/images/tabby-cat-square.jpg" alt="" />
+                <span class="text-xs text-neutral-500"><code>avatar size-16</code></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Initials fallback</h2>
+          <p class="text-sm text-neutral-700">
+            <code>object-cover</code> is inert on anything that isn't a replaced element, so the same
+            class is safe on a <code>&lt;span&gt;</code> — add a background, a text color and centring.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-center gap-4">
+              <span class="avatar grid place-items-center bg-brand-100 text-sm font-semibold text-brand-700" aria-hidden="true">JD</span>
+              <span class="avatar grid place-items-center bg-neutral-200 text-sm font-semibold text-neutral-700" aria-hidden="true">MK</span>
+              <span class="avatar size-12 grid place-items-center bg-brand-100 text-base font-semibold text-brand-700" aria-hidden="true">AP</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">In a row</h2>
+          <div class="card">
+            <div class="card-body flex items-center gap-3">
+              <img class="avatar" src="/images/tabby-cat-square.jpg" alt="" />
+              <div>
+                <p class="text-sm font-medium text-neutral-900">Jane Doe</p>
+                <p class="text-xs text-neutral-500">jane@example.com</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Stacked</h2>
+          <p class="text-sm text-neutral-700">
+            Overlap with negative spacing and add a ring in the surface color to separate them.
+          </p>
+          <div class="card">
+            <div class="card-body flex -space-x-2">
+              <img class="avatar ring-2 ring-white" src="/images/tabby-cat-square.jpg" alt="" />
+              <img class="avatar ring-2 ring-white" src="/images/tabby-cat.jpg" alt="" />
+              <img class="avatar ring-2 ring-white" src="/images/book.jpg" alt="" />
+              <span class="avatar grid place-items-center bg-neutral-200 text-xs font-semibold text-neutral-700 ring-2 ring-white">+4</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">As a dropdown trigger</h2>
+          <p class="text-sm text-neutral-700">
+            The pattern the header uses. The focus ring belongs on the wrapping
+            <code>&lt;button&gt;</code>, not on the image — the button is what receives focus, and its
+            <code>rounded-full</code> keeps the ring circular. Note this menu uses its own id:
+            <code>user-menu</code> is already taken by the header on every page.
+          </p>
+          <div class="card">
+            <div class="card-body">
+              <div class="dropdown">
+                <button
+                  class="rounded-full focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+                  data-ds-toggle="dropdown"
+                  aria-controls="avatar-menu"
+                  aria-expanded="false"
+                  aria-label="Open account menu"
+                >
+                  <img class="avatar" src="/images/tabby-cat-square.jpg" alt="" />
+                </button>
+                <div id="avatar-menu" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+                  <button class="dropdown-item" data-ds-dismiss="dropdown">
+                    <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg> Profile
+                  </button>
+                  <button class="dropdown-item" data-ds-dismiss="dropdown">
+                    <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                    </svg> Sign out
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.avatar</code></dt>
+              <dd><code>block</code>, 36×36, fully rounded, <code>object-cover</code>. Override the
+                size with a <code>size-*</code> utility; no size modifiers ship.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

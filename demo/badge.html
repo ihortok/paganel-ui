@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-page="badge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badge — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Badge</h1>
+          <p class="text-sm text-neutral-700">
+            A small status label. Write the content in normal case — <code>.badge</code> applies
+            <code>uppercase</code> and <code>tracking-wide</code> itself, the same "label signature"
+            used by <code>.sidebar-section-title</code>.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Variants</h2>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-center gap-2">
+              <span class="badge badge-brand">Brand</span>
+              <span class="badge badge-success">Success</span>
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-danger">Danger</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Content</h2>
+          <p class="text-sm text-neutral-700">
+            There are deliberately no size modifiers — a badge is one size, so a row of them stays
+            even. Counts and multi-word labels both work.
+          </p>
+          <div class="card">
+            <div class="card-body flex flex-wrap items-center gap-2">
+              <span class="badge badge-brand">12</span>
+              <span class="badge badge-success">Active</span>
+              <span class="badge badge-warning">Needs review</span>
+              <span class="badge badge-danger">3 failed</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">In context</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.badge</code> is <code>inline-flex</code>, so it sits on the text baseline in a
+            sentence and aligns as a flex item in a header row.
+          </p>
+          <div class="space-y-4">
+            <div class="card">
+              <p class="card-body">
+                Status: <span class="badge badge-success">Active</span> — last synced two minutes ago.
+                Two items are still <span class="badge badge-warning">Pending</span>.
+              </p>
+            </div>
+            <div class="card">
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="card-header">Reading list</h3>
+                <span class="badge badge-brand">New</span>
+              </div>
+              <p class="card-body">Four books queued, one in progress.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.badge</code></dt>
+              <dd>Base: inline-flex, small radius, tight padding, uppercase and tracked. No color.</dd>
+              <dt><code>.badge-brand</code></dt>
+              <dd>Brand tint — for neutral emphasis rather than a status.</dd>
+              <dt><code>.badge-success</code> / <code>.badge-warning</code> / <code>.badge-danger</code></dt>
+              <dd>Semantic tints, each a 10% wash of the matching token color.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

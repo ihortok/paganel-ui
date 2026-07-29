@@ -1,0 +1,43 @@
+<!-- The active link's modifier class and current-page marker are added at build time by the
+     htmlInclude plugin in vite.config.ts, from the data-page attribute on each page's root. -->
+<div id="sidebar-drawer" class="sidebar-drawer" data-ds-panel="drawer">
+  <div class="sidebar-backdrop" data-ds-dismiss="drawer"></div>
+  <aside class="sidebar">
+    <a class="sidebar-link" data-page="overview" href="/index.html" data-ds-dismiss="drawer">Overview</a>
+
+    <div class="sidebar-section-title">Foundations</div>
+    <a class="sidebar-link" data-page="tokens" href="/tokens.html" data-ds-dismiss="drawer">Design tokens</a>
+    <a class="sidebar-link" data-page="icon" href="/icon.html" data-ds-dismiss="drawer">Icons</a>
+
+    <div class="sidebar-section-title">Components</div>
+    <a class="sidebar-link" data-page="card" href="/card.html" data-ds-dismiss="drawer">Card</a>
+    <a class="sidebar-link" data-page="button" href="/button.html" data-ds-dismiss="drawer">Button</a>
+    <a class="sidebar-link" data-page="badge" href="/badge.html" data-ds-dismiss="drawer">Badge</a>
+    <a class="sidebar-link" data-page="alert" href="/alert.html" data-ds-dismiss="drawer">Alert</a>
+    <a class="sidebar-link" data-page="dropdown" href="/dropdown.html" data-ds-dismiss="drawer">Dropdown</a>
+    <a class="sidebar-link" data-page="form" href="/form.html" data-ds-dismiss="drawer">Form controls</a>
+    <a class="sidebar-link" data-page="avatar" href="/avatar.html" data-ds-dismiss="drawer">Avatar</a>
+
+    <div class="sidebar-footer">
+      <p class="mb-2 truncate text-xs text-neutral-400">jane@example.com</p>
+      <a class="sidebar-link" href="/index.html" data-ds-dismiss="drawer">
+        <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+        </svg> Sign out
+      </a>
+    </div>
+  </aside>
+</div>
+
+<button
+  type="button"
+  class="btn btn-primary btn-md sidebar-toggle"
+  data-ds-toggle="drawer"
+  aria-controls="sidebar-drawer"
+  aria-expanded="false"
+  aria-label="Toggle sidebar"
+>
+  <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+  </svg>
+</button>

@@ -120,16 +120,29 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | `.card`, `.card-header`, `.card-body`, `.card-footer` | |
 | `.card-media` | Wraps an `<img>`; bleeds it to the card's edges. Combine with `.card`. |
 | `.card-horizontal`, `.card-horizontal-media` | Image-on-the-side layout. Combine `.card-horizontal` with `.card`. |
+| `.card-book-cover`, `.card-book-author` | Portrait 2:3 cover image plus a muted byline. Combine with `.card-horizontal`. |
 | `.btn` + `.btn-{primary,secondary,danger}` + `.btn-{sm,md,lg}` | Compose in markup, e.g. `class="btn btn-primary btn-md"` |
 | `.badge` + `.badge-{brand,success,warning,danger}` | |
 | `.alert` + `.alert-{info,success,warning,danger}` | |
 | `.dropdown` / `.dropdown-menu` / `.dropdown-item` | See below for the JS wiring |
-| `.header`, `.header-brand`, `.header-nav`, `.header-actions` | Top app-bar layout |
-| `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`), `.sidebar-footer` | Vertical nav layout |
+| `.header`, `.header-brand`, `.header-nav`, `.header-actions` | Top app-bar layout. `fixed`, `h-16`, `lg:left-60` — see the layout note below |
+| `.sidebar`, `.sidebar-section-title`, `.sidebar-link` (+ `.sidebar-link-active`), `.sidebar-footer` | Vertical nav layout. `fixed`, `w-60` — see the layout note below |
 | `.sidebar-drawer`, `.sidebar-backdrop`, `.sidebar-toggle` | Off-canvas mobile drawer for `.sidebar` — see below for the JS wiring |
 | `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
 | `.avatar` | Circular `<img>`, e.g. for a user menu trigger |
 | `.icon` + `.icon-{sm,lg}` | Neutral fixed-size icon slot — bring your own icon set, see below |
+
+### Header + sidebar layout
+
+Both are `position: fixed`, so they don't take part in normal flow and page content has to clear them itself. `.header` is `h-16` and `.sidebar` is `w-60` (and the header is `lg:left-60` so it starts where the sidebar ends), which makes the wrapper:
+
+```html
+<div class="pt-16 lg:ml-60">
+  <main>…</main>
+</div>
+```
+
+Neither component ships responsive behaviour of its own — the demo's `hidden lg:flex` on `.header-nav` is applied in markup, so you decide what collapses and when.
 
 ### Dropdown
 
@@ -187,6 +200,8 @@ cd demo
 npm run dev     # Vite dev server with @tailwindcss/vite
 npm run build   # production build, compiled CSS in demo/dist
 ```
+
+The demo is a multi-page static site: one page per component (`demo/card.html`, `demo/button.html`, …) reachable from the sidebar, with `demo/index.html` as a slim overview. Shared header/sidebar markup lives in `demo/partials/` and is inlined at build time by a small local Vite plugin, so every page ends up as plain HTML you can view-source and copy.
 
 ## Extending
 

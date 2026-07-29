@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" data-page="dropdown">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Dropdown</h1>
+          <p class="text-sm text-neutral-700">
+            Three classes and three data attributes. The behavior ships with the package and
+            initializes itself on import — there is no per-instance setup call.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Basic</h2>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-md"
+              data-ds-toggle="dropdown"
+              aria-controls="dropdown-basic"
+              aria-expanded="false"
+            >
+              Open menu
+              <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div id="dropdown-basic" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg> Profile
+              </button>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg> Settings
+              </button>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                </svg> Sign out
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Right-aligned</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.dropdown-menu</code> is absolutely positioned against <code>.dropdown</code>, and
+            defaults to the left edge. Add the <code>right-0</code> utility when the trigger sits
+            near the right of the viewport — this is what the avatar menu in the header uses.
+          </p>
+          <div class="flex justify-end">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary btn-md"
+                data-ds-toggle="dropdown"
+                aria-controls="dropdown-right"
+                aria-expanded="false"
+              >
+                Aligned right
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div id="dropdown-right" class="dropdown-menu right-0" data-ds-panel="dropdown" hidden>
+                <button class="dropdown-item" data-ds-dismiss="dropdown">Rename</button>
+                <button class="dropdown-item" data-ds-dismiss="dropdown">Duplicate</button>
+                <button class="dropdown-item" data-ds-dismiss="dropdown">Archive</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Links as items</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.dropdown-item</code> is element-agnostic — use <code>&lt;a&gt;</code> when the item
+            navigates and <code>&lt;button&gt;</code> when it acts. These really navigate.
+          </p>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-md"
+              data-ds-toggle="dropdown"
+              aria-controls="dropdown-links"
+              aria-expanded="false"
+            >
+              Jump to component
+              <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div id="dropdown-links" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+              <a class="dropdown-item" href="/card.html" data-ds-dismiss="dropdown">Card</a>
+              <a class="dropdown-item" href="/button.html" data-ds-dismiss="dropdown">Button</a>
+              <a class="dropdown-item" href="/form.html" data-ds-dismiss="dropdown">Form controls</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Grouped</h2>
+          <p class="text-sm text-neutral-700">
+            No <code>.dropdown-divider</code> or <code>.dropdown-label</code> ships — the group label
+            and rule below are plain utilities, so don't go hunting for classes that don't exist.
+          </p>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-md"
+              data-ds-toggle="dropdown"
+              aria-controls="dropdown-groups"
+              aria-expanded="false"
+            >
+              Sort and filter
+              <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <div id="dropdown-groups" class="dropdown-menu" data-ds-panel="dropdown" hidden>
+              <div class="px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">Sort by</div>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">Title</button>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">Date added</button>
+              <hr class="my-1 border-neutral-200" />
+              <div class="px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">Show</div>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">All books</button>
+              <button class="dropdown-item" data-ds-dismiss="dropdown">Unread only</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Behavior</h2>
+          <div class="card">
+            <div class="card-body space-y-3 text-sm">
+              <p>A dropdown opens on trigger click and closes on any of: clicking the trigger again,
+                clicking outside the panel, pressing <kbd>Escape</kbd> (which returns focus to the
+                trigger), or clicking anything marked <code>data-ds-dismiss="dropdown"</code> inside
+                the panel.</p>
+              <p>The required wiring is three attributes plus a matching id:</p>
+              <ul class="ml-5 list-disc space-y-1">
+                <li>trigger — <code>data-ds-toggle="dropdown"</code>, <code>aria-controls</code>
+                  pointing at the panel's <code>id</code>, and <code>aria-expanded="false"</code></li>
+                <li>panel — <code>data-ds-panel="dropdown"</code> and the <code>hidden</code> attribute</li>
+                <li>items that should close the menu — <code>data-ds-dismiss="dropdown"</code></li>
+              </ul>
+              <p>All state lives in DOM attributes (<code>aria-expanded</code>, <code>hidden</code>)
+                rather than in a JS-side instance map. That is what makes it safe under Turbo Drive:
+                markup swapped in after a navigation is indistinguishable from markup that was there
+                on load, so there is no instance to lose and no re-init hook to call.</p>
+              <p>One delegated listener set is installed on <code>document</code> for the whole page,
+                no matter how many dropdowns exist.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Ids must be unique per page</h2>
+          <p class="text-sm text-neutral-700">
+            Panels are resolved through <code>getElementById</code> and
+            <code>[aria-controls]</code>, so a duplicated <code>id</code> silently wires a trigger to
+            the wrong panel. The shared header on every page of this demo already uses
+            <code>user-menu</code> — which is why the four menus above are
+            <code>dropdown-basic</code>, <code>dropdown-right</code>, <code>dropdown-links</code> and
+            <code>dropdown-groups</code>. Open the avatar menu in the header and one of these
+            together to confirm they stay independent.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.dropdown</code></dt>
+              <dd>Positioning context — <code>relative inline-block</code> around trigger and panel.</dd>
+              <dt><code>.dropdown-menu</code></dt>
+              <dd>The floating panel. Sets no display utility on purpose: visibility is the native
+                <code>hidden</code> attribute alone, so nothing fights it at equal specificity.</dd>
+              <dt><code>.dropdown-item</code></dt>
+              <dd>Full-width row, <code>flex</code> so an <code>.icon</code> gets <code>gap-2</code>
+                spacing, with a hover background.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

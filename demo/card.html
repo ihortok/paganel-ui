@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-page="card">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Card</h1>
+          <p class="text-sm text-neutral-700">
+            A padded white surface with a soft shadow and generous radius. Every sub-part —
+            header, body, footer, media — is optional and combined in markup.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Anatomy</h2>
+          <div class="card">
+            <h3 class="card-header">Card title</h3>
+            <p class="card-body">
+              This body text, the white background, the shadow, and the rounded corners all come
+              from the <code>.card</code> component class defined in <code>css/components/card.css</code>.
+            </p>
+            <div class="card-footer flex flex-wrap gap-2">
+              <button class="btn btn-primary btn-md">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                Primary
+              </button>
+              <button class="btn btn-secondary btn-md">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                </svg>
+                Secondary
+              </button>
+              <button class="btn btn-danger btn-md">
+                <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                </svg>
+                Danger
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Minimal</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.card</code> on its own is a valid card — no sub-part is required.
+          </p>
+          <div class="card">
+            <p class="card-body">Just a surface and some text.</p>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Header with a badge</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.card-header</code> keeps its own <code>mb-2</code> inside a flex row, so it
+            pairs with a trailing element without extra markup.
+          </p>
+          <div class="card">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="card-header">Reading list</h3>
+              <span class="badge badge-brand">New</span>
+            </div>
+            <p class="card-body">Four books queued, one in progress.</p>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Media and layout variants</h2>
+          <p class="text-sm text-neutral-700">
+            The image rules are <strong>descendant</strong> selectors — the <code>&lt;img&gt;</code>
+            itself takes no class. <code>.card-media</code> cancels <code>.card</code>'s padding with
+            negative margins, so it must be a direct child of the card.
+          </p>
+          <div class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="card">
+                <div class="card-media">
+                  <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
+                </div>
+                <h3 class="card-header">Media card</h3>
+                <p class="card-body">Image bleeds to the card edges via <code>.card-media</code>.</p>
+              </div>
+              <div class="card card-horizontal">
+                <div class="card-horizontal-media">
+                  <img src="/images/tabby-cat-square.jpg" alt="Close-up of a tabby cat's face" />
+                </div>
+                <div>
+                  <h3 class="card-header">Horizontal card</h3>
+                  <p class="card-body">Image and content side by side via <code>.card-horizontal</code>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card card-horizontal">
+              <div class="card-book-cover">
+                <img src="/images/book.jpg" alt="Cover of The Dragon's Legacy" />
+              </div>
+              <div>
+                <h3 class="card-header">The Dragon's Legacy</h3>
+                <p class="card-book-author">by Author Name</p>
+                <p class="card-body">A high fantasy epic of ancient pacts and a kingdom built on dragonfire.</p>
+                <form class="card-footer flex flex-col gap-3">
+                  <div class="field">
+                    <label class="label" for="book-shelf">Add to my list</label>
+                    <select class="select" id="book-shelf">
+                      <option>Want to read</option>
+                      <option>Currently reading</option>
+                      <option>Read</option>
+                    </select>
+                  </div>
+                  <button class="btn btn-primary btn-md" type="submit">
+                    <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg> Add to list
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.card</code></dt>
+              <dd>The surface: white background, <code>shadow-ds-md</code>, <code>rounded-ds-lg</code>, <code>p-5</code>.</dd>
+              <dt><code>.card-header</code></dt>
+              <dd>Serif title with bottom margin. Use on whatever heading level the page needs.</dd>
+              <dt><code>.card-body</code></dt>
+              <dd>Relaxed leading, neutral body color.</dd>
+              <dt><code>.card-footer</code></dt>
+              <dd>Top border plus spacing above it. Combine with layout utilities for the row itself.</dd>
+              <dt><code>.card-media</code></dt>
+              <dd>Wraps an <code>&lt;img&gt;</code> and bleeds it to the top and side edges. Direct child of <code>.card</code> only.</dd>
+              <dt><code>.card-horizontal</code></dt>
+              <dd>Layout modifier — combine with <code>.card</code> for image-beside-content.</dd>
+              <dt><code>.card-horizontal-media</code></dt>
+              <dd>Fixed 96×96 thumbnail slot for <code>.card-horizontal</code>.</dd>
+              <dt><code>.card-book-cover</code></dt>
+              <dd>Portrait 2:3 cover slot, one third of the card width, top-aligned.</dd>
+              <dt><code>.card-book-author</code></dt>
+              <dd>Muted byline line, sized to sit under <code>.card-header</code>.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

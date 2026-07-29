@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-page="button">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button — Paganel UI Demo</title>
+  </head>
+  <body class="min-h-screen bg-neutral-50">
+    <!-- Inline SVG icons on this page are from Heroicons (https://heroicons.com) —
+         MIT License, Copyright (c) Tailwind Labs, Inc. -->
+    <!-- @include partials/sidebar.html -->
+    <!-- @include partials/header.html -->
+
+    <div class="pt-16 lg:ml-60">
+      <main class="mx-auto max-w-3xl space-y-10 p-8">
+        <div class="space-y-2">
+          <h1 class="font-serif text-2xl font-bold tracking-tight text-neutral-900">Button</h1>
+          <p class="text-sm text-neutral-700">
+            Compose three classes in markup: the base <code>.btn</code>, one color variant, and one
+            size — <code>class="btn btn-primary btn-md"</code>. The base ships layout, radius and
+            transition but deliberately no color, so a variant is what makes a button visible.
+          </p>
+        </div>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Sizes × variants</h2>
+          <p class="text-sm text-neutral-700">
+            Sizes are not cumulative with the base's own padding — they override it by source
+            order, so exactly one size class should be present.
+          </p>
+          <div class="space-y-4">
+            <div class="card">
+              <h3 class="card-header"><code>.btn-sm</code></h3>
+              <div class="card-body flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-sm">Primary</button>
+                <button class="btn btn-secondary btn-sm">Secondary</button>
+                <button class="btn btn-danger btn-sm">Danger</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header"><code>.btn-md</code></h3>
+              <div class="card-body flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-md">Primary</button>
+                <button class="btn btn-secondary btn-md">Secondary</button>
+                <button class="btn btn-danger btn-md">Danger</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header"><code>.btn-lg</code></h3>
+              <div class="card-body flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-lg">Primary</button>
+                <button class="btn btn-secondary btn-lg">Secondary</button>
+                <button class="btn btn-danger btn-lg">Danger</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">With icons</h2>
+          <p class="text-sm text-neutral-700">
+            <code>.btn</code> already lays out an <code>.icon</code> beside its label with
+            <code>gap-2</code> — no wrapper element and no extra spacing utility. Position is
+            decided by where you put the icon in the markup.
+          </p>
+          <div class="space-y-4">
+            <div class="card">
+              <h3 class="card-header">Leading</h3>
+              <div class="card-body flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-md">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                  Save changes
+                </button>
+                <button class="btn btn-secondary btn-md">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                  </svg>
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-md">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                  </svg>
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header">Trailing</h3>
+              <p class="card-body text-sm">The shape a dropdown trigger uses.</p>
+              <div class="card-footer flex flex-wrap items-center gap-2">
+                <button class="btn btn-secondary btn-md">
+                  Options
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header">Icon only</h3>
+              <p class="card-body text-sm">
+                The base is <code>justify-center</code>, so a lone icon centres itself. There is no
+                visible label, which makes <code>aria-label</code> mandatory rather than optional.
+              </p>
+              <div class="card-footer flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-md" aria-label="Add book">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>
+                </button>
+                <button class="btn btn-secondary btn-md" aria-label="Edit book">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                  </svg>
+                </button>
+                <button class="btn btn-danger btn-md" aria-label="Delete book">
+                  <svg class="icon icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">States and edges</h2>
+          <div class="space-y-4">
+            <div class="card">
+              <h3 class="card-header">Disabled</h3>
+              <p class="card-body text-sm">
+                Built into the base: <code>disabled:opacity-50</code> plus
+                <code>disabled:pointer-events-none</code>, so no variant needs its own disabled rule.
+              </p>
+              <div class="card-footer flex flex-wrap items-center gap-2">
+                <button class="btn btn-primary btn-md">Enabled</button>
+                <button class="btn btn-primary btn-md" disabled>Disabled</button>
+                <button class="btn btn-secondary btn-md" disabled>Disabled</button>
+                <button class="btn btn-danger btn-md" disabled>Disabled</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header">Base with no variant</h3>
+              <p class="card-body text-sm">
+                Intentional: component classes here are compositional, never one custom class
+                <code>@apply</code>-ing another. So <code>.btn</code> alone is shape without color —
+                useful as a starting point for a one-off, and a reminder that the variant does the
+                visual work.
+              </p>
+              <div class="card-footer flex flex-wrap items-center gap-2">
+                <button class="btn btn-md">Unstyled base</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-header">On an anchor</h3>
+              <p class="card-body text-sm">
+                <code>.btn</code> is <code>inline-flex</code> and element-agnostic — it looks the
+                same on a <code>&lt;button&gt;</code> or an <code>&lt;a&gt;</code>. This one really
+                navigates.
+              </p>
+              <div class="card-footer flex flex-wrap items-center gap-2">
+                <a class="btn btn-primary btn-md" href="/index.html">Back to overview</a>
+                <a class="btn btn-secondary btn-md" href="/card.html">Card component</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.btn</code></dt>
+              <dd>Base: inline-flex layout, <code>gap-2</code> for an icon, radius, transition, press effect, disabled state. No color.</dd>
+              <dt><code>.btn-primary</code></dt>
+              <dd>Filled brand.</dd>
+              <dt><code>.btn-secondary</code></dt>
+              <dd>Quiet neutral fill.</dd>
+              <dt><code>.btn-danger</code></dt>
+              <dd>Filled danger, for destructive actions.</dd>
+              <dt><code>.btn-sm</code> / <code>.btn-md</code> / <code>.btn-lg</code></dt>
+              <dd>Padding and text size. Pick exactly one.</dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
