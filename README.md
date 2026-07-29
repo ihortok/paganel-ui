@@ -45,6 +45,55 @@ import { initPaganelUI, onDelegate } from "paganel-ui";
 
 A minified browser global build is also available for script-tag-only setups (no bundler): `paganel-ui/browser` (exposes `window.PaganelUI`).
 
+## Icons
+
+**This package ships no icon set and has no icon dependency.** Installing `paganel-ui` will not pull an icon library into your project, and no component requires one to render correctly — every component looks right with an icon, without one, and with icons from any source.
+
+What it does ship is `.icon`, a neutral fixed-size slot you combine in markup with whatever your app uses:
+
+```html
+<!-- an inline SVG (Heroicons, Lucide, hand-drawn — no dependency at all) -->
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="currentColor" aria-hidden="true">…</svg>
+
+<!-- an icon font's own element -->
+<i class="icon <your-icon-classes>" aria-hidden="true"></i>
+
+<!-- or just a text glyph -->
+<span class="icon" aria-hidden="true">📚</span>
+```
+
+The common box is the point. Left alone, those three size themselves by completely different rules — an icon font sizes in `em` and so drifts with the surrounding font-size, a bare inline `<svg>` has no usable intrinsic size at all, and a text glyph is whatever the font gives. `.icon` puts all of them in one predictable box, so they match each other and align in a column. `.icon-sm` and `.icon-lg` are the modifiers — compose them, e.g. `class="icon icon-sm"`.
+
+`.btn`, `.sidebar-link`, `.dropdown-item` and `.alert` already lay out an icon alongside their label with the right spacing, so no extra markup is needed:
+
+```html
+<button class="btn btn-primary btn-md">
+  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+  </svg>
+  Add book
+</button>
+```
+
+Inline SVG is what the demo uses throughout, and it's the lightest option: no install, no extra network request, nothing to wire into your asset pipeline, and only the icons you actually paste.
+
+### Using an icon font instead
+
+If you'd rather pull in a full icon font, install it into **your own** project — that way you pick the library and version, and your own asset pipeline handles its font files:
+
+```css
+@import "tailwindcss";
+@import "<your-icon-font>/css/all.css" layer(components);
+@import "paganel-ui/css";
+```
+
+Two details in that snippet matter:
+
+- **`layer(components)`** — icon-font CSS is normally unlayered, which places it *above* every Tailwind utility in the cascade. Wrapping it in a layer puts it back underneath them.
+- **Import it before `paganel-ui/css`** — same layer, same specificity, so the later import wins, letting `.icon` override the icon set's own `line-height`/sizing.
+
+> **Rails note:** icon fonts ship `.woff2` files referenced by relative `url()`. Tailwind rewrites those paths but never *copies* the files, so under `cssbundling-rails` you will need to make the webfont directory reachable by Propshaft/Sprockets (copy it into `app/assets/`, or add it to `config.assets.paths`). Inline SVG icons avoid this entirely.
+
 ## Rails integration
 
 Using `cssbundling-rails` (or any Node-based Tailwind pipeline):
@@ -80,6 +129,7 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | `.sidebar-drawer`, `.sidebar-backdrop`, `.sidebar-toggle` | Off-canvas mobile drawer for `.sidebar` — see below for the JS wiring |
 | `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
 | `.avatar` | Circular `<img>`, e.g. for a user menu trigger |
+| `.icon` + `.icon-{sm,lg}` | Neutral fixed-size icon slot — bring your own icon set, see below |
 
 ### Dropdown
 
@@ -104,7 +154,10 @@ Opens/closes on trigger click, closes on outside click, closes on <kbd>Escape</k
 <button class="btn btn-primary btn-md sidebar-toggle"
         data-ds-toggle="drawer" aria-controls="sidebar-drawer" aria-expanded="false"
         aria-label="Toggle sidebar">
-  ☰
+  <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+  </svg>
 </button>
 
 <div id="sidebar-drawer" class="sidebar-drawer" data-ds-panel="drawer">

@@ -12,8 +12,13 @@
     @apply absolute z-10 mt-2 min-w-40 rounded-ds-md bg-white p-1 shadow-ds-md;
   }
 
+  /*
+   * `flex` rather than `block` so an `.icon` sibling gets `gap-2` spacing, the
+   * same way `.sidebar-link` does. The label text becomes an anonymous flex
+   * item, which is what the gap applies to — so `text-left` is redundant here.
+   */
   .dropdown-item {
-    @apply block w-full rounded-ds-sm px-3 py-2 text-left text-sm
+    @apply flex w-full items-center gap-2 rounded-ds-sm px-3 py-2 text-sm
            text-neutral-700 hover:bg-neutral-50;
   }
 }

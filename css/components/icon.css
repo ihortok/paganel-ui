@@ -1,0 +1,30 @@
+@layer components {
+  /*
+   * A neutral, fixed-size icon slot. This package ships no icon set and has no
+   * icon dependency — `.icon` is combined in markup with whatever the consuming
+   * app chose: an inline `<svg>`, an icon font's `<i>`, or a plain text glyph.
+   *
+   * The common box is the point. Left alone, these three size themselves by
+   * completely different rules: an icon font sizes in `em` (so it drifts with
+   * the surrounding font-size), a bare inline `<svg>` has no usable intrinsic
+   * size at all, and a text glyph is whatever the font gives. `.icon` puts all
+   * of them in one predictable box so they match each other and align in a
+   * column (e.g. down `.sidebar-link`).
+   *
+   * `inline-block`, not `inline-flex`: icon-font CSS is typically plain
+   * unlayered CSS, and unlayered rules beat `@layer` ones — matching the
+   * `display: inline-block` such sets already use avoids a fight this would
+   * lose. `text-center` + `leading-*` centre the glyph in the box instead.
+   */
+  .icon {
+    @apply inline-block size-5 shrink-0 text-center leading-5;
+  }
+
+  .icon-sm {
+    @apply size-4 leading-4;
+  }
+
+  .icon-lg {
+    @apply size-6 leading-6;
+  }
+}
