@@ -75,5 +75,7 @@ function htmlInclude(): Plugin {
 
 export default defineConfig({
   plugins: [htmlInclude(), tailwindcss()],
-  build: { rollupOptions: { input: pages } },
+  // rolldownOptions, not rollupOptions: Vite 8 bundles with Rolldown and deprecated the
+  // old name. Requires Vite >= 8, which demo/package.json pins.
+  build: { rolldownOptions: { input: pages } },
 });
