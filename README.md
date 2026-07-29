@@ -118,9 +118,10 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | Class | Notes |
 |---|---|
 | `.card`, `.card-header`, `.card-body`, `.card-footer` | |
+| `.card-meta` | Muted line under `.card-header` — a byline, a date, a read time. |
 | `.card-media` | Wraps an `<img>`; bleeds it to the card's edges. Combine with `.card`. |
 | `.card-horizontal`, `.card-horizontal-media` | Image-on-the-side layout. Combine `.card-horizontal` with `.card`. |
-| `.card-book-cover`, `.card-book-author` | Portrait 2:3 cover image plus a muted byline. Combine with `.card-horizontal`. |
+| `.card-book-cover` | Portrait 2:3 cover image slot. Combine with `.card-horizontal`; pair with `.card-meta` for the byline. |
 | `.btn` + `.btn-{primary,secondary,danger}` + `.btn-{sm,md,lg}` | Compose in markup, e.g. `class="btn btn-primary btn-md"` |
 | `.badge` + `.badge-{brand,success,warning,danger}` | |
 | `.alert` + `.alert-{info,success,warning,danger}` | |
@@ -130,6 +131,7 @@ import "paganel-ui"; // auto-initializes; survives Turbo Drive swaps, no turbo:l
 | `.sidebar-drawer`, `.sidebar-backdrop`, `.sidebar-toggle` | Off-canvas mobile drawer for `.sidebar` — see below for the JS wiring |
 | `.field`, `.label`, `.input`, `.textarea`, `.select`, `.checkbox`, `.checkbox-label`, `.hint`, `.error-message` | Form controls; add `.input-error`/`.textarea-error`/`.select-error` for the invalid state |
 | `.avatar` | Circular `<img>`, e.g. for a user menu trigger |
+| `.comment`, `.comment-list`, `.comment-author`, `.comment-meta`, `.comment-body` | Comment thread. Bring your own avatar; give it `shrink-0` and the content side `min-w-0 flex-1` |
 | `.icon` + `.icon-{sm,lg}` | Neutral fixed-size icon slot — bring your own icon set, see below |
 
 ### Header + sidebar layout

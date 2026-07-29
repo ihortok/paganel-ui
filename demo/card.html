@@ -109,7 +109,7 @@
               </div>
               <div>
                 <h3 class="card-header">The Dragon's Legacy</h3>
-                <p class="card-book-author">by Author Name</p>
+                <p class="card-meta">by Author Name</p>
                 <p class="card-body">A high fantasy epic of ancient pacts and a kingdom built on dragonfire.</p>
                 <form class="card-footer flex flex-col gap-3">
                   <div class="field">
@@ -132,6 +132,86 @@
         </section>
 
         <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Article with comments</h2>
+          <p class="text-sm text-neutral-700">
+            Composition rather than a new card variant: <code>.card-media</code> for the cover,
+            <code>.card-meta</code> on a flex row for the author avatar and byline, and a
+            <code>.card-footer</code> holding a
+            <code>.comment-list</code> plus a reply form. The comment classes ship separately in
+            <code>css/components/comment.css</code> and work outside a card too.
+          </p>
+          <div class="card">
+            <div class="card-media">
+              <img src="/images/tabby-cat.jpg" alt="A tabby cat sitting in a stone doorway" />
+            </div>
+            <h3 class="card-header">In praise of the reading slump</h3>
+            <div class="card-meta flex items-center gap-3">
+              <img class="avatar shrink-0" src="/images/tabby-cat-square.jpg" alt="" />
+              <span>by Maya Okonkwo · 12 March 2026 · 5 min read</span>
+            </div>
+            <p class="card-body">
+              Every reader hits a stretch where nothing lands. The stack by the bed stops looking
+              inviting and starts looking like homework, and the obvious conclusion — that you have
+              somehow stopped being a person who reads — is the one thing that is definitely not true.
+            </p>
+
+            <div class="card-footer space-y-4">
+              <div class="flex items-center gap-2">
+                <h4 class="card-header mb-0 text-base">Comments</h4>
+                <span class="badge badge-brand">3</span>
+              </div>
+
+              <div class="comment-list">
+                <div class="comment">
+                  <span class="avatar size-8 shrink-0 grid place-items-center bg-neutral-200 text-xs font-semibold text-neutral-700" aria-hidden="true">PR</span>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex flex-wrap items-baseline gap-2">
+                      <span class="comment-author">Priya Raman</span>
+                      <span class="comment-meta">2 days ago</span>
+                    </div>
+                    <p class="comment-body">
+                      The homework framing is exactly it. I put the stack out of sight for a fortnight
+                      and picked up something short and silly instead, and that fixed it.
+                    </p>
+                  </div>
+                </div>
+                <div class="comment">
+                  <span class="avatar size-8 shrink-0 grid place-items-center bg-brand-100 text-xs font-semibold text-brand-700" aria-hidden="true">JD</span>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex flex-wrap items-baseline gap-2">
+                      <span class="comment-author">Jonas Delacroix</span>
+                      <span class="comment-meta">1 day ago · edited</span>
+                    </div>
+                    <p class="comment-body">
+                      Counterpoint: sometimes the slump is the book. Abandoning one at page forty has
+                      never once made me regret it.
+                    </p>
+                  </div>
+                </div>
+                <div class="comment">
+                  <img class="avatar size-8 shrink-0" src="/images/tabby-cat.jpg" alt="" />
+                  <div class="min-w-0 flex-1">
+                    <div class="flex flex-wrap items-baseline gap-2">
+                      <span class="comment-author">Wen Li</span>
+                      <span class="comment-meta">4 hours ago</span>
+                    </div>
+                    <p class="comment-body">Saving this to reread in February, when I will need it.</p>
+                  </div>
+                </div>
+              </div>
+
+              <form class="flex flex-col gap-3">
+                <div class="field">
+                  <label class="label" for="article-reply">Add a comment</label>
+                  <textarea class="textarea" id="article-reply" placeholder="Share your thoughts…"></textarea>
+                </div>
+                <button class="btn btn-primary btn-sm self-start" type="submit">Post comment</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="space-y-2">
           <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Classes</h2>
           <div class="card">
             <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
@@ -139,6 +219,10 @@
               <dd>The surface: white background, <code>shadow-ds-md</code>, <code>rounded-ds-lg</code>, <code>p-5</code>.</dd>
               <dt><code>.card-header</code></dt>
               <dd>Serif title with bottom margin. Use on whatever heading level the page needs.</dd>
+              <dt><code>.card-meta</code></dt>
+              <dd>Muted line under <code>.card-header</code> — a byline, a date, a read time. Sets
+                type and spacing only, so it works on a <code>&lt;p&gt;</code> or on a flex row
+                holding an author <code>.avatar</code>.</dd>
               <dt><code>.card-body</code></dt>
               <dd>Relaxed leading, neutral body color.</dd>
               <dt><code>.card-footer</code></dt>
@@ -151,8 +235,31 @@
               <dd>Fixed 96×96 thumbnail slot for <code>.card-horizontal</code>.</dd>
               <dt><code>.card-book-cover</code></dt>
               <dd>Portrait 2:3 cover slot, one third of the card width, top-aligned.</dd>
-              <dt><code>.card-book-author</code></dt>
-              <dd>Muted byline line, sized to sit under <code>.card-header</code>.</dd>
+            </dl>
+          </div>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-serif text-lg font-semibold tracking-tight text-neutral-900">Comment classes</h2>
+          <p class="text-sm text-neutral-700">
+            These ship in <code>css/components/comment.css</code>, not <code>card.css</code> — a
+            comment thread is its own component and works anywhere. They're documented on this page
+            because a card footer is the only place this demo composes them.
+          </p>
+          <div class="card">
+            <dl class="card-body grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+              <dt><code>.comment</code></dt>
+              <dd>One comment: a flex row for an avatar beside the text. Give the avatar
+                <code>shrink-0</code> and the content side <code>min-w-0 flex-1</code>, or a long
+                unbroken word will push past the container instead of wrapping.</dd>
+              <dt><code>.comment-list</code></dt>
+              <dd>Stacked thread — spacing between comments, no rules between them.</dd>
+              <dt><code>.comment-author</code></dt>
+              <dd>The commenter's name.</dd>
+              <dt><code>.comment-meta</code></dt>
+              <dd>Timestamp, "edited", a role. Pairs with <code>.comment-author</code> on one line.</dd>
+              <dt><code>.comment-body</code></dt>
+              <dd>The comment text.</dd>
             </dl>
           </div>
         </section>

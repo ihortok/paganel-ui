@@ -1,0 +1,33 @@
+@layer components {
+  /*
+   * One comment: an avatar slot beside the text. Like .btn with an icon, this
+   * component doesn't own the avatar — compose `.avatar` plus a size utility in
+   * markup, an initials <span>, or nothing at all.
+   *
+   * The content side needs `min-w-0 flex-1` in markup, and the avatar needs
+   * `shrink-0`. A flex item defaults to `min-width: auto`, so without them a
+   * long unbroken word or URL in .comment-body pushes past the container's edge
+   * instead of wrapping, and the avatar squashes out of round.
+   */
+  .comment {
+    @apply flex gap-3;
+  }
+
+  /* Stacked thread — gap rather than rules between items, so it reads as a list. */
+  .comment-list {
+    @apply flex flex-col gap-4;
+  }
+
+  .comment-author {
+    @apply text-sm font-medium text-neutral-900;
+  }
+
+  /* Timestamp, "edited", a role — pairs with .comment-author on one line. */
+  .comment-meta {
+    @apply text-xs text-neutral-500;
+  }
+
+  .comment-body {
+    @apply text-sm leading-relaxed text-neutral-700;
+  }
+}
